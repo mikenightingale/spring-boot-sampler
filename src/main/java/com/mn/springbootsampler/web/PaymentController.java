@@ -3,7 +3,7 @@ package com.mn.springbootsampler.web;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mn.springbootsampler.infrastructure.PaymentProducer;
+import com.mn.springbootsampler.infrastructure.kafka.PaymentProducer;
 import com.mn.springbootsampler.web.resource.PaymentResource;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Async;

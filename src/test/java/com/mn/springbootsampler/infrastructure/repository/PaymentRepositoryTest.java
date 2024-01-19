@@ -38,7 +38,7 @@ class PaymentRepositoryTest {
     void shouldReadBackAllPayment() {
         genericRepository.save(providePayment());
         genericRepository.save(providePayment());
-        var result = genericRepository.findById();
+        var result = genericRepository.findAll();
         assertThat(result).hasSize(2);
 
     }

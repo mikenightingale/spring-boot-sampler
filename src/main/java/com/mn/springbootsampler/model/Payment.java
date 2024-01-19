@@ -30,7 +30,6 @@ public class Payment implements IdentifiedEntity {
     @GeneratedValue(generator = "sequence-generator")
     @GenericGenerator(
             name = "sequence-generator",
-            strategy = "org.hibernate.id.enhanced.SequenceStyleGenerator",
             parameters = {
                     @Parameter(name = "sequence_name", value = "payment_seq"),
                     @Parameter(name = "initial_value", value = "1"),

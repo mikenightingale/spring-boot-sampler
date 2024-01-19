@@ -1,14 +1,26 @@
 package com.mn.springbootsampler.model.repositories;
 
 import com.mn.springbootsampler.model.IdentifiedEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface GenericRepository<T extends IdentifiedEntity, K> {
-    T save(T in);
 
-    Optional<T> findById(K id);
+    JpaRepository<T,K> provide();
 
-    List<T> findById();
+    default T save(T in){
+        return provide().save(in);
+    }
+
+    default Optional<T> findById(K id){
+        return provide().findById(id);
+    }
+
+    default List<T> findAll(){
+        return provide().findAll();
+    }
+
+
 }

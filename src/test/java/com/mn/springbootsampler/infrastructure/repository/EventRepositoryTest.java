@@ -46,7 +46,7 @@ class EventRepositoryTest {
     void shouldReadBackAllPayment() {
         genericRepository.save(provideEvent());
         genericRepository.save(provideEvent());
-        var result = genericRepository.findById();
+        var result = genericRepository.findAll();
         assertThat(result).hasSize(2);
 
     }

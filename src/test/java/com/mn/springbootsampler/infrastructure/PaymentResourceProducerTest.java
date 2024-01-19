@@ -1,5 +1,6 @@
 package com.mn.springbootsampler.infrastructure;
 
+import com.mn.springbootsampler.infrastructure.kafka.PaymentProducer;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
