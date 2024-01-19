@@ -9,6 +9,7 @@ import org.springframework.kafka.annotation.EnableKafka;
 
 @Configuration
 @EnableKafka
+@SuppressWarnings("unused")
 public class KafkaTopicConfig {
     @Value("${topic.name}")
     private String topicName;

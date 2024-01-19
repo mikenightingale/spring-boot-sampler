@@ -9,6 +9,7 @@ import java.util.concurrent.Executor;
 
 @Configuration
 @EnableAsync
+@SuppressWarnings("unused")
 public class AsyncConfig {
 
     @Bean(name = "asyncExecutor")
