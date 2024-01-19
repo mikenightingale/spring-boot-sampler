@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class PaymentConsumer1 {
 
     @KafkaListener( groupId = "parallel1" , topicPartitions = {
-            @TopicPartition(topic = "payment", partitionOffsets = @PartitionOffset(partition = "0", initialOffset = "0"))
+            @TopicPartition(topic = "payment", partitionOffsets = @PartitionOffset(partition = "1",initialOffset = "0"))
     })
     public void consumeAll(String message)
     {

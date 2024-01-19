@@ -20,7 +20,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 @Disabled
-class PaymentProducerTest {
+class PaymentResourceProducerTest {
 
     private static final String TOPIC = "payment";
     public static final String TEST_MSG = """
