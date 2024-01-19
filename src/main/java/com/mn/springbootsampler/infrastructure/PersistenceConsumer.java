@@ -1,12 +1,17 @@
 package com.mn.springbootsampler.infrastructure;
 
+import com.mn.springbootsampler.infrastructure.repository.EventRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.annotation.PartitionOffset;
 import org.springframework.kafka.annotation.TopicPartition;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PaymentConsumer1 {
+@RequiredArgsConstructor
+public class PersistenceConsumer {
+
+    private final EventRepository genericRepository;
 
     @KafkaListener( groupId = "parallel1" , topicPartitions = {
             @TopicPartition(topic = "payment", partitionOffsets = @PartitionOffset(partition = "1",initialOffset = "0"))

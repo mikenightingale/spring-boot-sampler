@@ -1,6 +1,8 @@
 package com.mn.springbootsampler.web;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mn.springbootsampler.infrastructure.PaymentProducer;
 import com.mn.springbootsampler.web.resource.PaymentResource;
 import lombok.RequiredArgsConstructor;
@@ -18,12 +20,12 @@ import java.util.concurrent.CompletableFuture;
 public class PaymentController {
 
     private final PaymentProducer producer;
+    private final ObjectMapper objectMapper;
 
     @Async
     @PostMapping
-    public CompletableFuture<String> publishMessage(@RequestBody PaymentResource payment)  {
-
-        var send = producer.send(payment.iban(), payment.toString());
+    public CompletableFuture<String> publishMessage(@RequestBody PaymentResource payment) throws JsonProcessingException {
+        var send = producer.send(payment.iban(), objectMapper.writeValueAsString(payment));
         return send;
     }
 }

@@ -10,6 +10,6 @@ class PaymentTest {
     @Test
     void shouldBuildPayment() {
         Payment p = providePayment();
-        assertThat(p.toString()).isEqualTo("Payment(paymentId=null, bic=DE1234567, iban=DE123456789123, currency=EUR, amount=99)");
+        assertThat(p.toString()).isEqualTo("Payment(id=null, bic=DE1234567, iban=DE123456789123, currency=EUR, amount=99)");
     }
 }

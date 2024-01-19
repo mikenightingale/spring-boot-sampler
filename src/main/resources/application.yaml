@@ -5,17 +5,17 @@ spring:
   kafka:
     enable: true
     bootstrap-servers: 127.0.0.1:9092
-    producer:
-      bootstrap-servers: 127.0.0.1:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      group-id: group_id
+#    producer:
+#      bootstrap-servers: 127.0.0.1:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      group-id: group_id
 
   jpa:
     show-sql: true
     generate-ddl: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     database: postgresql
 
     properties:

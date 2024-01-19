@@ -1,10 +1,10 @@
 package com.mn.springbootsampler.infrastructure.repository;
 
-import com.mn.springbootsampler.model.Payment;
-import com.mn.springbootsampler.model.repositories.PaymentRepository;
-import com.mn.springbootsampler.model.repositories.PaymentRepositoryJPA;
+import com.mn.springbootsampler.model.Event;
+import com.mn.springbootsampler.model.repositories.GenericRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,21 +13,21 @@ import java.util.Optional;
 @Slf4j
 @RequiredArgsConstructor
 @Repository
-public class PaymentRepositoryImpl implements PaymentRepository {
-    private final PaymentRepositoryJPA innerRepos;
+public class EventRepository implements GenericRepository<Event, Integer> {
+    private final JpaRepository<Event, Integer> innerRepos;
 
     @Override
-    public Payment save(Payment in) {
+    public Event save(Event in) {
         return innerRepos.save(in);
     }
 
     @Override
-    public Optional<Payment> findById(Integer id) {
+    public Optional<Event> findById(Integer id) {
         return innerRepos.findById(id);
     }
 
     @Override
-    public List<Payment> findById() {
+    public List<Event> findById() {
         return innerRepos.findAll();
     }
 }
