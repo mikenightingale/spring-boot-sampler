@@ -17,6 +17,7 @@ import org.hibernate.annotations.Parameter;
 public class Payment implements IdentifiedEntity {
 
     @Builder
+    @SuppressWarnings("unused")
     private Payment(Integer paymentId, String bic, String iban, String currency, Integer amount) {
         this.id = paymentId;
         this.bic = bic;
